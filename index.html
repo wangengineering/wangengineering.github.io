@@ -434,9 +434,9 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
   // Proposal form.
-  // TODO: create a free form at https://formspree.io, then replace YOUR_FORM_ID below.
-  // Until then, submitting opens the visitor's email app with the details filled in.
-  const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+  // Submissions are sent via Formspree to wangcharles825@gmail.com.
+  // If FORM_ENDPOINT is ever reset to contain YOUR_FORM_ID, the form falls back to opening the visitor's email app.
+  const FORM_ENDPOINT = 'https://formspree.io/f/moedpyrq';
   const TO_EMAIL = 'wangcharles825@gmail.com';
 
   const form = document.getElementById('proposal-form');
