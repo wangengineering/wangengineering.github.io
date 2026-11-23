@@ -5,175 +5,234 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wang Engineering, LLC — MEP Design, Thermal &amp; CFD Engineering</title>
 <meta name="description" content="Wang Engineering, LLC provides MEP design, data center thermal and liquid cooling engineering, hydronic analysis, industrial CFD and PE review services.">
+<meta property="og:title" content="Wang Engineering, LLC">
+<meta property="og:description" content="MEP design, data center cooling, hydronic analysis and CFD for mission-critical facilities.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wangengineering.github.io/">
+<meta name="theme-color" content="#0b2545">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b2545'/%3E%3Cpath d='M6 9l4 14 6-11 6 11 4-14' fill='none' stroke='%23c8793d' stroke-width='2.6' stroke-linejoin='miter'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0f2340;
-    --navy-2: #16304f;
-    --ink: #1b2433;
-    --text: #3a4556;
-    --muted: #6b7686;
-    --line: #e3e8ef;
-    --bg: #ffffff;
-    --bg-2: #f5f7fa;
-    --accent: #e8702a;
-    --accent-2: #1f7ae0;
-    --mono: "JetBrains Mono", ui-monospace, monospace;
-    --sans: "Inter", system-ui, -apple-system, sans-serif;
+    --navy: #0b2545;
+    --navy-deep: #081a33;
+    --ink: #0d1b2a;
+    --text: #33404f;
+    --muted: #677485;
+    --rule: #dde2e8;
+    --paper: #ffffff;
+    --paper-2: #f4f6f8;
+    --copper: #c8793d;
+    --copper-dk: #a85f28;
+    --steel: #8da9c4;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    --serif: "IBM Plex Serif", Georgia, serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: var(--sans); color: var(--text); background: var(--bg); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  body { font-family: var(--sans); color: var(--text); background: var(--paper); line-height: 1.65; font-size: 16px; -webkit-font-smoothing: antialiased; }
   a { color: inherit; text-decoration: none; }
-  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-  h1, h2, h3, h4 { color: var(--ink); line-height: 1.2; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  h1, h2, h3, h4 { color: var(--ink); font-weight: 500; line-height: 1.2; }
+  .label { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--copper-dk); }
 
-  /* Nav */
-  nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-  .brand { display: flex; align-items: center; gap: 11px; }
-  .mark { width: 36px; height: 36px; border-radius: 8px; background: var(--navy); display: grid; place-items: center; }
-  .brand-name { font-weight: 800; letter-spacing: .04em; color: var(--navy); font-size: 16px; line-height: 1.1; }
-  .brand-name small { display: block; font-weight: 500; letter-spacing: .12em; font-size: 10.5px; color: var(--muted); }
-  .nav-links { display: flex; align-items: center; gap: 30px; font-size: 14.5px; font-weight: 500; }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-links .btn { padding: 9px 18px; font-size: 14px; }
+  /* Utility bar + nav */
+  .utility { background: var(--navy-deep); color: #9fb2c8; font-size: 13px; }
+  .utility .wrap { display: flex; justify-content: space-between; height: 36px; align-items: center; gap: 16px; }
+  .utility a:hover { color: #fff; }
+  nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--rule); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand svg { flex: none; }
+  .brand-name { font-weight: 600; letter-spacing: .16em; color: var(--navy); font-size: 15px; line-height: 1.15; }
+  .brand-name small { display: block; font-weight: 400; letter-spacing: .1em; font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .nav-links { display: flex; align-items: center; gap: 36px; font-size: 14.5px; font-weight: 500; color: var(--ink); }
+  .nav-links a:not(.btn) { position: relative; padding: 6px 0; }
+  .nav-links a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; background: var(--copper); transform: scaleX(0); transition: transform .2s; transform-origin: left; }
+  .nav-links a:not(.btn):hover::after { transform: scaleX(1); }
 
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 8px; font-weight: 600; font-size: 15px; transition: background .15s, transform .15s, border-color .15s; }
-  .btn-accent { background: var(--accent); color: #fff; }
-  .btn-accent:hover { background: #d4611f; transform: translateY(-1px); }
-  .btn-line { border: 1.5px solid rgba(255,255,255,.35); color: #fff; }
-  .btn-line:hover { border-color: #fff; }
-  .nav-links .btn-accent { color: #fff; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 26px; border-radius: 2px; font-weight: 500; font-size: 15px; letter-spacing: .01em; transition: background .15s, border-color .15s, color .15s; border: 1px solid transparent; cursor: pointer; font-family: inherit; }
+  .btn-primary { background: var(--copper); color: #fff; }
+  .btn-primary:hover { background: var(--copper-dk); }
+  .btn-outline-light { border-color: rgba(255,255,255,.4); color: #fff; }
+  .btn-outline-light:hover { border-color: #fff; background: rgba(255,255,255,.06); }
+  .btn-navy { background: var(--navy); color: #fff; padding: 11px 20px; font-size: 14px; }
+  .btn-navy:hover { background: var(--ink); }
+  .btn .arr { transition: transform .15s; }
+  .btn:hover .arr { transform: translateX(3px); }
 
   /* Hero */
   .hero { background: var(--navy); color: #fff; position: relative; overflow: hidden; }
-  .hero svg.grid { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5; }
-  .hero .wrap { position: relative; padding: 110px 24px 120px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 56px; align-items: center; }
-  .kicker { font-family: var(--mono); font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: #f4a271; margin-bottom: 20px; }
-  .hero h1 { color: #fff; font-size: clamp(36px, 5vw, 56px); font-weight: 800; letter-spacing: -.02em; }
-  .hero h1 em { font-style: normal; color: #f4a271; }
-  .hero p { color: #b9c6d8; font-size: 18px; margin: 24px 0 36px; max-width: 560px; }
+  .hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 48px 48px; }
+  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; padding-top: 80px; padding-bottom: 88px; }
+  .hero .label { color: #e0a272; }
+  .hero h1 { font-family: var(--serif); font-weight: 400; color: #fff; font-size: clamp(38px, 4.8vw, 60px); line-height: 1.08; letter-spacing: -.015em; margin: 22px 0 26px; }
+  .hero p { color: #c0cddc; font-size: 18px; max-width: 540px; margin-bottom: 40px; }
   .hero .cta { display: flex; gap: 14px; flex-wrap: wrap; }
-  .hero-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 28px; backdrop-filter: blur(4px); }
-  .hero-card h4 { color: #fff; font-size: 13px; font-family: var(--mono); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 18px; opacity: .8; }
-  .cred { display: flex; gap: 14px; align-items: center; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.1); }
-  .cred:first-of-type { border-top: none; padding-top: 0; }
-  .cred .ic { flex: none; width: 40px; height: 40px; border-radius: 9px; background: rgba(232,112,42,.15); color: #f4a271; display: grid; place-items: center; font-weight: 700; font-size: 13px; }
-  .cred b { color: #fff; display: block; font-size: 15px; }
-  .cred span { color: #9fb0c6; font-size: 13.5px; }
+  .hero-svc { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.16); }
+  .hero-svc .hd { padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,.16); font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #e0a272; }
+  .hero-svc a { display: grid; grid-template-columns: 36px 1fr auto; gap: 8px; align-items: center; padding: 17px 24px; border-bottom: 1px solid rgba(255,255,255,.1); transition: background .15s; }
+  .hero-svc a:last-child { border-bottom: none; }
+  .hero-svc a:hover { background: rgba(255,255,255,.06); }
+  .hero-svc .n { font-family: var(--mono); font-size: 12px; color: #8ea3bb; }
+  .hero-svc b { display: block; color: #fff; font-weight: 500; font-size: 16px; }
+  .hero-svc small { display: block; color: #9fb2c8; font-size: 13.5px; margin-top: 2px; }
+  .hero-svc .go { color: #e0a272; transition: transform .15s; }
+  .hero-svc a:hover .go { transform: translateX(3px); }
+
+  /* Credentials band */
+  .band { border-bottom: 1px solid var(--rule); }
+  .band .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .band .item { padding: 34px 28px; border-left: 1px solid var(--rule); }
+  .band .item:first-child { border-left: none; padding-left: 0; }
+  .band .k { font-family: var(--serif); font-size: 30px; color: var(--navy); line-height: 1.1; }
+  .band .v { font-size: 14px; color: var(--muted); margin-top: 6px; }
 
   /* Sections */
-  section { padding: 100px 0; }
-  section.alt { background: var(--bg-2); }
-  .sec-label { font-family: var(--mono); font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-  .sec-title { font-size: clamp(28px, 3.4vw, 38px); font-weight: 800; letter-spacing: -.015em; max-width: 680px; }
-  .sec-intro { max-width: 640px; margin-top: 16px; font-size: 17px; color: var(--muted); }
-  .sec-head { margin-bottom: 52px; }
+  section { padding: 112px 0; scroll-margin-top: 76px; }
+  section.tint { background: var(--paper-2); }
+  .sec-head { display: grid; grid-template-columns: 280px 1fr; gap: 48px; margin-bottom: 64px; align-items: start; }
+  .sec-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 3.2vw, 42px); letter-spacing: -.01em; }
+  .sec-head p { color: var(--muted); font-size: 17px; margin-top: 18px; max-width: 640px; }
+  .sec-head .label { padding-top: 14px; border-top: 2px solid var(--copper); display: inline-block; }
 
   /* Services */
-  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-  .svc { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 30px 28px; transition: box-shadow .2s, transform .2s, border-color .2s; }
-  .svc:hover { box-shadow: 0 14px 34px rgba(15,35,64,.08); transform: translateY(-3px); border-color: #cfd8e3; }
-  .svc .ico { width: 48px; height: 48px; border-radius: 11px; background: #fdf0e7; color: var(--accent); display: grid; place-items: center; margin-bottom: 20px; }
-  .svc h3 { font-size: 19px; margin-bottom: 10px; }
-  .svc p { font-size: 15px; margin-bottom: 14px; }
-  .svc ul { list-style: none; font-size: 14px; color: var(--muted); }
-  .svc li { padding: 4px 0 4px 18px; position: relative; }
-  .svc li::before { content: ""; position: absolute; left: 2px; top: 12px; width: 6px; height: 6px; border-radius: 2px; background: var(--accent-2); }
-  .svc.feature { grid-column: span 2; background: var(--navy); border-color: var(--navy); color: #b9c6d8; }
-  .svc.feature h3 { color: #fff; font-size: 22px; }
-  .svc.feature .ico { background: rgba(232,112,42,.18); }
-  .svc.feature ul { color: #b9c6d8; columns: 2; column-gap: 28px; }
-  .svc.feature li::before { background: var(--accent); }
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .svc { background: #fff; border: 1px solid var(--rule); border-top: 3px solid var(--navy); padding: 32px 30px; display: flex; flex-direction: column; transition: border-color .2s, box-shadow .2s; scroll-margin-top: 96px; }
+  .svc:hover { border-top-color: var(--copper); box-shadow: 0 16px 36px rgba(11,37,69,.08); }
+  .svc .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+  .svc .num { font-family: var(--mono); font-size: 13px; color: var(--copper-dk); }
+  .svc .ico { color: var(--navy); }
+  .svc h3 { font-size: 20px; font-weight: 500; margin-bottom: 12px; }
+  .svc p { font-size: 15px; margin-bottom: 20px; }
+  .svc ul { list-style: none; font-size: 14px; color: var(--ink); margin-top: auto; border-top: 1px solid var(--rule); }
+  .svc li { padding: 8px 0; border-bottom: 1px dashed var(--rule); display: flex; gap: 10px; }
+  .svc li:last-child { border-bottom: none; padding-bottom: 0; }
+  .svc li::before { content: "—"; color: var(--copper); flex: none; }
+  .svc.cta { background: var(--navy); border-color: var(--navy); color: #c0cddc; justify-content: center; }
+  .svc.cta:hover { border-top-color: var(--copper); }
+  .svc.cta h3 { color: #fff; font-family: var(--serif); font-weight: 400; font-size: 24px; }
+  .svc.cta .btn { align-self: flex-start; margin-top: 8px; }
 
-  /* Industries */
-  .industries { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
-  .ind { background: #fff; padding: 28px 24px; }
-  .ind .n { font-family: var(--mono); color: var(--accent); font-size: 13px; }
-  .ind h4 { font-size: 17px; margin: 8px 0 6px; }
-  .ind p { font-size: 14px; color: var(--muted); }
+  /* Tools */
 
-  /* Process */
-  .process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; counter-reset: step; }
-  .step { position: relative; padding-top: 22px; border-top: 3px solid var(--line); }
-  .step::before { counter-increment: step; content: "0" counter(step); position: absolute; top: -3px; left: 0; width: 46px; border-top: 3px solid var(--accent); padding-top: 18px; font-family: var(--mono); font-size: 13px; color: var(--accent); }
-  .step h4 { font-size: 18px; margin: 22px 0 8px; }
-  .step p { font-size: 14.5px; color: var(--muted); }
+  /* Sectors */
+  .sectors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--ink); }
+  .sector { padding: 32px 28px 8px 0; }
+  .sector + .sector { padding-left: 28px; border-left: 1px solid var(--rule); }
+  .sector svg { color: var(--navy); margin-bottom: 20px; }
+  .sector h4 { font-size: 18px; margin-bottom: 10px; }
+  .sector p { font-size: 14.5px; color: var(--muted); }
 
-  /* Founder */
-  .founder { display: grid; grid-template-columns: 1fr 1.35fr; gap: 56px; align-items: start; }
-  .founder-card { background: var(--navy); color: #b9c6d8; border-radius: 16px; padding: 36px; position: sticky; top: 100px; }
-  .avatar { width: 84px; height: 84px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #f4a271); display: grid; place-items: center; color: #fff; font-weight: 800; font-size: 28px; margin-bottom: 20px; }
-  .founder-card h3 { color: #fff; font-size: 24px; }
-  .founder-card .t { color: #f4a271; font-weight: 500; margin: 4px 0 22px; }
-  .facts { list-style: none; font-size: 14.5px; }
-  .facts li { padding: 10px 0; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; gap: 12px; }
-  .facts li b { color: #fff; font-weight: 600; text-align: right; }
-  .founder-body p { font-size: 16.5px; margin-bottom: 18px; }
-  .founder-body h4 { font-size: 13px; font-family: var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 34px 0 16px; }
-  .exp { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .exp div { border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; font-size: 14.5px; background: #fff; }
-  .exp b { display: block; color: var(--ink); font-size: 15px; margin-bottom: 2px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chip { font-size: 13px; padding: 6px 12px; border-radius: 6px; background: var(--bg-2); border: 1px solid var(--line); color: var(--ink); }
-  .note { font-size: 12.5px; color: var(--muted); margin-top: 14px; font-style: italic; }
+  /* Approach */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: s; }
+  .step { counter-increment: s; }
+  .step .bar { height: 2px; background: var(--rule); position: relative; margin-bottom: 26px; }
+  .step .bar::before { content: ""; position: absolute; left: 0; top: 0; height: 2px; width: 40px; background: var(--copper); }
+  .step .n::before { content: "0" counter(s); font-family: var(--mono); font-size: 13px; color: var(--copper-dk); }
+  .step h4 { font-size: 20px; margin: 10px 0 10px; }
+  .step p { font-size: 15px; color: var(--muted); }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 380px 1fr; gap: 72px; align-items: start; }
+  .profile { border: 1px solid var(--rule); background: #fff; }
+  .profile .top { background: var(--navy); padding: 32px; display: flex; gap: 20px; align-items: center; }
+  .mono-mark { width: 72px; height: 72px; border: 1px solid rgba(255,255,255,.35); display: grid; place-items: center; font-family: var(--serif); font-size: 28px; color: #fff; flex: none; }
+  .profile .top h3 { color: #fff; font-size: 20px; }
+  .profile .top div span { color: #e0a272; font-size: 14px; }
+  .profile dl { padding: 8px 32px 24px; }
+  .profile dl div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px; }
+  .profile dl div:last-child { border-bottom: none; }
+  .profile dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: 2px; }
+  .profile dd { color: var(--ink); }
+  .about-body > p { font-size: 17px; margin-bottom: 20px; max-width: 680px; }
+  .about-body h4 { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 44px 0 0; padding-bottom: 14px; border-bottom: 1px solid var(--ink); }
+  .history div { display: grid; grid-template-columns: 1fr 1.4fr auto; gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--rule); font-size: 15px; align-items: baseline; }
+  .history b { color: var(--ink); font-weight: 600; }
+  .history .yr { font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+  .work { list-style: none; columns: 2; column-gap: 40px; }
+  .work li { break-inside: avoid; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 14.5px; color: var(--ink); }
+  .work li span { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--copper-dk); margin-bottom: 2px; }
+  .note { font-size: 13px; color: var(--muted); margin-top: 16px; font-style: italic; }
 
   /* Contact */
-  .contact { background: var(--navy); color: #b9c6d8; padding: 90px 0; }
-  .contact .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
-  .contact h2 { color: #fff; font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: -.015em; }
-  .contact p { margin-top: 14px; font-size: 17px; max-width: 520px; }
-  .contact-box { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 30px; }
-  .contact-box .lbl { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #f4a271; }
-  .contact-box .val { color: #fff; font-size: 18px; font-weight: 600; margin: 6px 0 22px; word-break: break-all; }
-  .contact-box .btn { width: 100%; justify-content: center; border: none; cursor: pointer; font-family: inherit; }
-  .contact-box .btn:disabled { opacity: .6; cursor: default; transform: none; }
-  .contact .wrap { align-items: start; }
-  .direct { margin-top: 30px; }
-  .direct .lbl { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #f4a271; }
-  .direct a { display: inline-block; color: #fff; font-size: 18px; font-weight: 600; margin-top: 6px; border-bottom: 1px solid rgba(255,255,255,.3); }
-  .direct a:hover { border-color: #f4a271; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .field { margin-bottom: 14px; }
-  .field label { display: block; font-size: 13px; font-weight: 500; color: #cfd9e6; margin-bottom: 6px; }
-  .field label .req { color: #f4a271; }
-  .field input, .field select, .field textarea {
-    width: 100%; font: inherit; font-size: 15px; color: #fff;
-    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); border-radius: 8px; padding: 11px 13px;
-    transition: border-color .15s, background .15s;
-  }
-  .field select option { color: var(--ink); }
-  .field textarea { min-height: 120px; resize: vertical; }
-  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #f4a271; background: rgba(255,255,255,.09); }
+  .contact { background: var(--navy); color: #c0cddc; padding: 112px 0; position: relative; overflow: hidden; }
+  .contact::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size: 48px 48px; }
+  .contact .wrap { position: relative; display: grid; grid-template-columns: 1fr 1.15fr; gap: 80px; align-items: start; }
+  .contact .label { color: #e0a272; }
+  .contact h2 { font-family: var(--serif); font-weight: 400; color: #fff; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.12; margin: 18px 0 20px; }
+  .contact p { font-size: 17px; max-width: 460px; }
+  .direct { margin-top: 44px; border-top: 1px solid rgba(255,255,255,.15); }
+  .direct div { display: grid; grid-template-columns: 110px 1fr; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.15); font-size: 15px; }
+  .direct dt { font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; color: #8ea3bb; padding-top: 3px; }
+  .direct a { color: #fff; }
+  .direct a:hover { color: #e0a272; }
+
+  .form { background: #fff; padding: 40px; color: var(--text); box-shadow: 0 30px 60px rgba(0,0,0,.25); }
+  .form h3 { font-size: 20px; margin-bottom: 6px; }
+  .form .sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .field { margin-bottom: 18px; }
+  .field label { display: block; font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 7px; }
+  .field label .req { color: var(--copper-dk); }
+  .field input, .field select, .field textarea { width: 100%; font: inherit; font-size: 15px; color: var(--ink); background: var(--paper-2); border: 1px solid var(--rule); border-radius: 2px; padding: 12px 14px; transition: border-color .15s, background .15s; }
+  .field textarea { min-height: 130px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--navy); background: #fff; }
+  .form .btn { width: 100%; margin-top: 4px; }
+  .form .btn:disabled { opacity: .6; cursor: default; }
   .hp { position: absolute; left: -9999px; }
-  .form-status { margin-top: 14px; font-size: 14.5px; min-height: 1em; }
-  .form-status.ok { color: #7ee2a8; }
-  .form-status.err { color: #ff9b8a; }
-  @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; gap: 0; } }
+  .form-status { margin-top: 14px; font-size: 14px; min-height: 1.2em; }
+  .form-status.ok { color: #1f7a4d; }
+  .form-status.err { color: #b3261e; }
+  .privacy { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
 
-  footer { background: #0b1a30; color: #7f8fa6; font-size: 13.5px; padding: 28px 0; }
-  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  footer { background: var(--navy-deep); color: #8ea3bb; font-size: 14px; }
+  footer .top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; padding: 64px 0 48px; }
+  footer h5 { font-family: var(--mono); font-weight: 500; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
+  footer ul { list-style: none; }
+  footer li { padding: 4px 0; }
+  footer a:hover { color: #fff; }
+  footer .brand-name { color: #fff; }
+  footer .brand-name small { color: #8ea3bb; }
+  footer .blurb { margin-top: 18px; max-width: 340px; }
+  footer .bottom { border-top: 1px solid rgba(255,255,255,.1); padding: 22px 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 13px; }
 
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
   .reveal.in { opacity: 1; transform: none; }
 
-  @media (max-width: 900px) {
-    .nav-links a:not(.btn) { display: none; }
-    .hero .wrap, .founder, .contact .wrap { grid-template-columns: 1fr; }
-    .hero .wrap { padding: 80px 24px 90px; }
-    .services { grid-template-columns: 1fr; }
-    .svc.feature { grid-column: auto; }
-    .svc.feature ul { columns: 1; }
-    .industries, .process { grid-template-columns: 1fr 1fr; }
-    .founder-card { position: static; }
-    .exp { grid-template-columns: 1fr; }
-    section { padding: 72px 0; }
+  @media (max-width: 1000px) {
+    .hero .wrap, .about, .contact .wrap { grid-template-columns: 1fr; gap: 56px; }
+    .sec-head { grid-template-columns: 1fr; gap: 18px; }
+    .services { grid-template-columns: 1fr 1fr; }
+    .sectors, .steps { grid-template-columns: 1fr 1fr; }
+    .sector:nth-child(3) { padding-left: 0; border-left: none; }
+    .band .wrap { grid-template-columns: 1fr 1fr; }
+    .band .item:nth-child(3) { border-left: none; padding-left: 0; }
+    .band .item:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    footer .top { grid-template-columns: 1fr 1fr; }
   }
-  @media (max-width: 520px) {
-    .industries, .process { grid-template-columns: 1fr; }
+  @media (max-width: 760px) {
+    .wrap { padding: 0 22px; }
+    .utility .loc { display: none; }
+    .nav-links a:not(.btn) { display: none; }
+    nav .wrap { height: 64px; }
+    nav .brand svg { width: 32px; height: 32px; }
+    nav .brand { gap: 10px; }
+    nav .brand-name { font-size: 12.5px; letter-spacing: .06em; white-space: nowrap; }
+    nav .brand-name small { display: none; }
+    .nav-links .btn { padding: 9px 14px; font-size: 13px; white-space: nowrap; }
+    section, .contact { padding: 80px 0; }
+    .sectors, .steps, .form-row, .services { grid-template-columns: 1fr; }
+    .hero-svc a { padding: 15px 18px; }
+    .form-row { gap: 0; }
+    .sector, .sector + .sector { padding-left: 0; border-left: none; border-bottom: 1px solid var(--rule); padding-bottom: 28px; }
+    .work { columns: 1; }
+    .history div { grid-template-columns: 1fr; gap: 2px; }
+    .form { padding: 28px 22px; }
+    footer .top { grid-template-columns: 1fr; }
   }
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
@@ -183,138 +242,134 @@
 </head>
 <body>
 
+<div class="utility">
+  <div class="wrap">
+    <span class="loc">MEP Design · Data Center Cooling · Hydronics · CFD · PE Review</span>
+    <a href="mailto:wangcharles825@gmail.com">wangcharles825@gmail.com</a>
+  </div>
+</div>
+
 <nav>
   <div class="wrap">
-    <a href="#" class="brand">
-      <span class="mark">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4a271" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5l4 14 5-10 5 10 4-14"/></svg>
-      </span>
-      <span class="brand-name">WANG ENGINEERING<small>LLC</small></span>
+    <a href="#" class="brand" aria-label="Wang Engineering, LLC — home">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" fill="#0b2545"/><path d="M8 12l5 17 7-13 7 13 5-17" fill="none" stroke="#c8793d" stroke-width="2.6" stroke-linejoin="miter"/></svg>
+      <span class="brand-name">WANG ENGINEERING<small>LLC · CONSULTING ENGINEERS</small></span>
     </a>
     <div class="nav-links">
       <a href="#services">Services</a>
-      <a href="#industries">Industries</a>
+      <a href="#sectors">Sectors</a>
       <a href="#approach">Approach</a>
       <a href="#about">About</a>
-      <a href="#contact" class="btn btn-accent">Request a Proposal</a>
+      <a href="#contact" class="btn btn-navy">Request a Proposal</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <svg class="grid" aria-hidden="true">
-    <defs>
-      <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-      </pattern>
-      <linearGradient id="fade" x1="0" x2="1">
-        <stop offset="0" stop-color="#0f2340" stop-opacity="1"/>
-        <stop offset="1" stop-color="#0f2340" stop-opacity="0"/>
-      </linearGradient>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#g)"/>
-    <rect width="60%" height="100%" fill="url(#fade)"/>
-  </svg>
   <div class="wrap">
     <div>
-      <div class="kicker">MEP · Thermal · CFD · Hydronics</div>
-      <h1>Engineering for <em>mission-critical</em> facilities.</h1>
-      <p>Wang Engineering, LLC delivers MEP design, data center cooling and liquid-cooling engineering, hydronic analysis, and CFD — led by a licensed Professional Engineer with a Ph.D. and 10+ years in hyperscale and industrial projects.</p>
+      <div class="label">Consulting Engineers · Mission-Critical Facilities</div>
+      <h1>Mechanical engineering for the facilities that cannot fail.</h1>
+      <p>MEP design, data center and liquid cooling engineering, hydronic analysis and CFD — delivered directly by a licensed Professional Engineer with more than a decade of hyperscale and industrial experience.</p>
       <div class="cta">
-        <a class="btn btn-accent" href="#contact">Start a project →</a>
-        <a class="btn btn-line" href="#services">Our services</a>
+        <a class="btn btn-primary" href="#contact">Request a Proposal <span class="arr">→</span></a>
+        <a class="btn btn-outline-light" href="#services">View Services</a>
       </div>
     </div>
-    <div class="hero-card">
-      <h4>Credentials</h4>
-      <div class="cred"><span class="ic">PE</span><div><b>Licensed Professional Engineer</b><span>Design review &amp; sealing</span></div></div>
-      <div class="cred"><span class="ic">PhD</span><div><b>Ph.D., Mechanical Engineering</b><span>CFD &amp; turbulent heat transfer</span></div></div>
-      <div class="cred"><span class="ic">10+</span><div><b>Years of experience</b><span>Hyperscale, mission-critical, industrial</span></div></div>
-      <div class="cred"><span class="ic">PMP</span><div><b>PMP · Six Sigma Green Belt</b><span>Disciplined project delivery</span></div></div>
-    </div>
+
+    <nav class="hero-svc" aria-label="Services">
+      <div class="hd">Services</div>
+      <a href="#svc-mep"><span class="n">01</span><span><b>MEP Design Services</b><small>HVAC, plumbing &amp; electrical design, BIM, CA</small></span><span class="go">→</span></a>
+      <a href="#svc-dc"><span class="n">02</span><span><b>Data Center Thermal &amp; Liquid Cooling</b><small>Airflow CFD, CDUs, cold plates, digital twins</small></span><span class="go">→</span></a>
+      <a href="#svc-hyd"><span class="n">03</span><span><b>Hydronic &amp; Piping Analysis</b><small>Chilled &amp; condenser water network modeling</small></span><span class="go">→</span></a>
+      <a href="#svc-cfd"><span class="n">04</span><span><b>Industrial CFD &amp; Multiphysics</b><small>Cooling towers, SCR / de-NOx, thermal fatigue</small></span><span class="go">→</span></a>
+      <a href="#svc-pe"><span class="n">05</span><span><b>PE Review &amp; Sealing</b><small>Design review, code compliance, peer review</small></span><span class="go">→</span></a>
+    </nav>
   </div>
 </header>
+
+<div class="band">
+  <div class="wrap">
+    <div class="item reveal"><div class="k">P.E.</div><div class="v">Licensed Professional Engineer</div></div>
+    <div class="item reveal"><div class="k">Ph.D.</div><div class="v">Mechanical Engineering</div></div>
+    <div class="item reveal"><div class="k">10+ yrs</div><div class="v">Hyperscale &amp; industrial projects</div></div>
+    <div class="item reveal"><div class="k">PMP</div><div class="v">Project Management Professional</div></div>
+  </div>
+</div>
 
 <section id="services">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-label">Services</div>
-      <h2 class="sec-title">From concept design to stamped drawings and validated models.</h2>
+      <div class="label">Services</div>
+      <div>
+        <h2>From concept design to sealed drawings and validated models.</h2>
+        <p>Five service lines, each led personally by the principal engineer.</p>
+      </div>
     </div>
+
     <div class="services">
-      <article class="svc feature reveal">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <article class="svc reveal" id="svc-mep">
+        <div class="top"><span class="num">01</span><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M9 21V9"/></svg></div>
         <h3>MEP Design Services</h3>
-        <p>Mechanical, electrical and plumbing design for commercial, industrial and mission-critical buildings — coordinated, code-compliant and built to perform.</p>
-        <ul>
-          <li>HVAC system design &amp; load calculations</li>
-          <li>Chilled water &amp; condenser water plants</li>
-          <li>Electrical &amp; plumbing coordination</li>
-          <li>Revit / BIM models &amp; construction documents</li>
-          <li>Energy &amp; CapEx tradeoff studies</li>
-          <li>Construction administration &amp; commissioning support</li>
-        </ul>
+        <p>Mechanical, electrical and plumbing design for commercial, industrial and mission-critical buildings — coordinated, code-compliant and engineered to perform.</p>
+        <ul><li>HVAC design &amp; load calculations</li><li>Chilled &amp; condenser water plants</li><li>BIM models &amp; construction documents</li><li>Construction administration &amp; commissioning support</li></ul>
       </article>
-
-      <article class="svc reveal">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 22v-4M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6"/><circle cx="12" cy="12" r="3"/></svg></div>
-        <h3>PE Review &amp; Sealing</h3>
-        <p>Independent engineering review and PE sealing of mechanical designs and calculations.</p>
-        <ul>
-          <li>Drawing &amp; calculation review</li>
-          <li>Code compliance checks</li>
-          <li>Third-party peer review</li>
-        </ul>
-      </article>
-
-      <article class="svc reveal">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h8M8 18h3"/></svg></div>
+      <article class="svc reveal" id="svc-dc">
+        <div class="top"><span class="num">02</span><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20"/><path d="M5 8h14M5 14h14"/><circle cx="8.5" cy="5" r=".8" fill="currentColor"/><circle cx="8.5" cy="11" r=".8" fill="currentColor"/><circle cx="8.5" cy="17" r=".8" fill="currentColor"/></svg></div>
         <h3>Data Center Thermal &amp; Liquid Cooling</h3>
-        <p>Thermal engineering for high-density AI/ML compute, from the chip to the chiller.</p>
-        <ul>
-          <li>Data hall airflow CFD</li>
-          <li>CDU, cold plate &amp; manifold integration</li>
-          <li>Air-to-liquid transition planning</li>
-          <li>Thermal digital twins &amp; telemetry validation</li>
-        </ul>
+        <p>Thermal engineering for high-density AI/ML compute, from the chip to the chiller — air, liquid and hybrid cooling.</p>
+        <ul><li>Data hall airflow CFD</li><li>CDU, cold plate &amp; manifold integration</li><li>Air-to-liquid transition planning</li><li>Thermal digital twins &amp; telemetry validation</li></ul>
       </article>
-
-      <article class="svc reveal">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h6l2-4 4 8 2-4h6"/></svg></div>
+      <article class="svc reveal" id="svc-hyd">
+        <div class="top"><span class="num">03</span><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h8v8h12M2 16h4"/><circle cx="14" cy="8" r="3"/><path d="M17 8h5"/></svg></div>
         <h3>Hydronic &amp; Piping Analysis</h3>
         <p>System-level hydraulic modeling of chilled water, condenser water and process cooling networks.</p>
-        <ul>
-          <li>AFT Fathom / Pipe-Flo modeling</li>
-          <li>Flow balance, pressure drop &amp; pump selection</li>
-          <li>Failure &amp; transient scenarios</li>
-        </ul>
+        <ul><li>Hydraulic network modeling</li><li>Flow balance, pressure drop &amp; pump selection</li><li>Failure &amp; transient scenario analysis</li></ul>
       </article>
-
-      <article class="svc reveal">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8c3-3 6 3 9 0s6 3 9 0M3 14c3-3 6 3 9 0s6 3 9 0M3 20c3-3 6 3 9 0s6 3 9 0"/></svg></div>
+      <article class="svc reveal" id="svc-cfd">
+        <div class="top"><span class="num">04</span><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 7c4-3 7 3 11 0s6-2 9 0M2 12c4-3 7 3 11 0s6-2 9 0M2 17c4-3 7 3 11 0s6-2 9 0"/></svg></div>
         <h3>Industrial CFD &amp; Multiphysics</h3>
         <p>High-fidelity simulation for power generation, emissions control and industrial facilities.</p>
-        <ul>
-          <li>Cooling tower &amp; exhaust recirculation</li>
-          <li>SCR / de-NOx mixing &amp; species transport</li>
-          <li>Thermal fatigue &amp; structural life analysis</li>
-        </ul>
+        <ul><li>Cooling tower &amp; exhaust recirculation</li><li>SCR / de-NOx mixing &amp; species transport</li><li>Thermal fatigue &amp; structural life analysis</li></ul>
+      </article>
+      <article class="svc reveal" id="svc-pe">
+        <div class="top"><span class="num">05</span><svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg></div>
+        <h3>PE Review &amp; Sealing</h3>
+        <p>Independent engineering review and Professional Engineer sealing of mechanical designs and calculations.</p>
+        <ul><li>Drawing &amp; calculation review</li><li>Code compliance checks</li><li>Third-party peer review</li></ul>
+      </article>
+      <article class="svc cta reveal">
+        <h3>Not sure which service fits?</h3>
+        <p>Describe your project and we'll recommend the right scope.</p>
+        <a class="btn btn-primary" href="#contact">Request a Proposal <span class="arr">→</span></a>
       </article>
     </div>
   </div>
 </section>
 
-<section id="industries" class="alt">
+<section id="sectors" class="tint">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-label">Industries</div>
-      <h2 class="sec-title">Where we work</h2>
+      <div class="label">Sectors</div>
+      <div><h2>Where we work</h2></div>
     </div>
-    <div class="industries reveal">
-      <div class="ind"><div class="n">01</div><h4>Hyperscale &amp; Colocation Data Centers</h4><p>AI/ML halls, liquid cooling, chilled water plants.</p></div>
-      <div class="ind"><div class="n">02</div><h4>Mission-Critical Facilities</h4><p>Generator yards, redundancy and failure analyses.</p></div>
-      <div class="ind"><div class="n">03</div><h4>Power Generation</h4><p>Simple-cycle turbines, SCR and emissions control.</p></div>
-      <div class="ind"><div class="n">04</div><h4>Advanced Manufacturing</h4><p>Process cooling, cooling towers, plant ventilation.</p></div>
+    <div class="sectors">
+      <div class="sector reveal">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="3" width="24" height="28"/><path d="M5 12h24M5 21h24"/><circle cx="10" cy="7.5" r="1" fill="currentColor"/><circle cx="10" cy="16.5" r="1" fill="currentColor"/><circle cx="10" cy="25.5" r="1" fill="currentColor"/></svg>
+        <h4>Hyperscale &amp; Colocation Data Centers</h4><p>AI/ML data halls, liquid cooling and chilled water plants.</p>
+      </div>
+      <div class="sector reveal">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 3l12 5v9c0 7-5 12-12 14C10 29 5 24 5 17V8z"/><path d="M12 17l4 4 7-8"/></svg>
+        <h4>Mission-Critical Facilities</h4><p>Generator yards, redundancy planning and failure analysis.</p>
+      </div>
+      <div class="sector reveal">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 3L8 19h9l-2 12 11-16h-9z"/></svg>
+        <h4>Power Generation</h4><p>Simple-cycle turbines, SCR and emissions control systems.</p>
+      </div>
+      <div class="sector reveal">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 31V15l8 5v-5l8 5v-5l8 5V5h4v26z"/></svg>
+        <h4>Advanced Manufacturing</h4><p>Process cooling, cooling towers and plant ventilation.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -322,60 +377,65 @@
 <section id="approach">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-label">Approach</div>
-      <h2 class="sec-title">Simulation you can trust, design you can build.</h2>
-      <p class="sec-intro">Every model is checked against test data, field measurements or operating telemetry, so recommendations hold up in the real facility.</p>
+      <div class="label">Approach</div>
+      <div>
+        <h2>Simulation you can trust. Design you can build.</h2>
+        <p>Every model is checked against test data, field measurements or operating telemetry, so recommendations hold up in the real facility.</p>
+      </div>
     </div>
-    <div class="process">
-      <div class="step reveal"><h4>Scope</h4><p>Define requirements, constraints, codes and the decisions the analysis must support.</p></div>
-      <div class="step reveal"><h4>Model</h4><p>Build CFD, hydraulic and MEP models at the fidelity the question demands.</p></div>
-      <div class="step reveal"><h4>Validate</h4><p>Correlate with measurements, BMS data and sensor telemetry to quantify confidence.</p></div>
-      <div class="step reveal"><h4>Deliver</h4><p>Clear reports, stamped drawings and actionable recommendations for your team.</p></div>
+    <div class="steps">
+      <div class="step reveal"><div class="bar"></div><div class="n"></div><h4>Scope</h4><p>Define requirements, constraints, codes and the decisions the work must support.</p></div>
+      <div class="step reveal"><div class="bar"></div><div class="n"></div><h4>Model</h4><p>Build MEP, hydraulic and CFD models at the fidelity the question demands.</p></div>
+      <div class="step reveal"><div class="bar"></div><div class="n"></div><h4>Validate</h4><p>Correlate with measurements, BMS data and sensor telemetry to quantify confidence.</p></div>
+      <div class="step reveal"><div class="bar"></div><div class="n"></div><h4>Deliver</h4><p>Clear reports, sealed drawings and actionable recommendations for your team.</p></div>
     </div>
   </div>
 </section>
 
-<section id="about" class="alt">
+<section id="about" class="tint">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-label">About</div>
-      <h2 class="sec-title">Led by the engineer who does the work.</h2>
+      <div class="label">About</div>
+      <div><h2>Led by the engineer who does the work.</h2></div>
     </div>
-    <div class="founder">
-      <aside class="founder-card reveal">
-        <div class="avatar">CW</div>
-        <h3>Charles (Chao) Wang</h3>
-        <div class="t">Founder &amp; Principal Engineer</div>
-        <ul class="facts">
-          <li>License <b>Professional Engineer</b></li>
-          <li>Ph.D. <b>Mech. Eng., UT Dallas</b></li>
-          <li>M.S. <b>Mech. Eng., UT Dallas</b></li>
-          <li>B.Eng. <b>Aerospace Eng., NUAA</b></li>
-          <li>Certifications <b>PMP · CSSGB</b></li>
-        </ul>
+    <div class="about">
+      <aside class="profile reveal">
+        <div class="top">
+          <div class="mono-mark">CW</div>
+          <div><h3>Charles (Chao) Wang</h3><span>Founder &amp; Principal Engineer</span></div>
+        </div>
+        <dl>
+          <div><dt>License</dt><dd>Professional Engineer (P.E.)</dd></div>
+          <div><dt>Ph.D.</dt><dd>Mechanical Engineering, University of Texas at Dallas</dd></div>
+          <div><dt>M.S.</dt><dd>Mechanical Engineering, University of Texas at Dallas</dd></div>
+          <div><dt>B.Eng.</dt><dd>Aerospace Engineering, Nanjing University of Aeronautics &amp; Astronautics</dd></div>
+          <div><dt>Certified</dt><dd>PMP · Lean Six Sigma Green Belt</dd></div>
+        </dl>
       </aside>
-      <div class="founder-body reveal">
+
+      <div class="about-body reveal">
         <p>Wang Engineering, LLC was founded by Charles Wang, a mechanical and thermal engineer with more than a decade of experience on hyperscale data centers, mission-critical facilities and industrial power systems.</p>
         <p>Clients work directly with a principal engineer — no hand-offs — combining MEP design discipline with deep CFD and hydronic analysis expertise.</p>
 
         <h4>Founder's prior experience</h4>
-        <div class="exp">
-          <div><b>Oracle</b>Principal Thermal Engineer – Data Center · 2024–2026</div>
-          <div><b>CECO Environmental</b>Engineering Manager – Multiphysics · 2022–2024</div>
-          <div><b>Jacobs</b>Mechanical Engineer – Mission Critical · 2020–2022</div>
-          <div><b>UT Dallas / UCLA</b>CFD &amp; turbulent heat transfer research · 2015–2019</div>
+        <div class="history">
+          <div><b>Oracle</b><span>Principal Thermal Engineer – Data Center</span><span class="yr">2024 – 2026</span></div>
+          <div><b>CECO Environmental</b><span>Engineering Manager – Multiphysics</span><span class="yr">2022 – 2024</span></div>
+          <div><b>Jacobs</b><span>Mechanical Engineer – Mission Critical</span><span class="yr">2020 – 2022</span></div>
+          <div><b>UT Dallas · UCLA</b><span>CFD &amp; turbulent heat transfer research</span><span class="yr">2015 – 2019</span></div>
         </div>
 
         <h4>Representative work by the founder</h4>
-        <div class="chips">
-          <span class="chip">Oracle Abilene Stargate — liquid &amp; air cooling analysis</span>
-          <span class="chip">Oracle Gen2 air-to-liquid transition</span>
-          <span class="chip">Google data center hydronics</span>
-          <span class="chip">Google generator yard CFD</span>
-          <span class="chip">Meta Eagle Mountain chilled water hydraulics</span>
-          <span class="chip">Tesla Gigafactory cooling tower CFD</span>
-          <span class="chip">GE Vernova / Siemens Energy SCR CFD</span>
-        </div>
+        <ul class="work">
+          <li><span>Oracle</span>Abilene Stargate — liquid &amp; air cooling analysis</li>
+          <li><span>Oracle</span>Gen2 data centers air-to-liquid transition</li>
+          <li><span>Google</span>Data center hydronics — hydraulic analysis</li>
+          <li><span>Google</span>Generator yard CFD &amp; exhaust recirculation</li>
+          <li><span>Meta</span>Eagle Mountain chilled water hydraulics</li>
+          <li><span>Tesla</span>Gigafactory cooling tower CFD</li>
+          <li><span>GE Vernova / Siemens Energy</span>de-NOx SCR system CFD</li>
+          <li><span>Tesla</span>Gigafactory casting room CFD</li>
+        </ul>
         <p class="note">Projects listed were performed by the founder in prior employment roles and are not clients of Wang Engineering, LLC.</p>
       </div>
     </div>
@@ -385,14 +445,17 @@
 <section id="contact" class="contact">
   <div class="wrap">
     <div class="reveal">
+      <div class="label">Contact</div>
       <h2>Have a project in mind?</h2>
       <p>Tell us about your facility, schedule and the questions you need answered. We'll respond with a scope and proposal.</p>
-      <div class="direct">
-        <div class="lbl">Or email directly</div>
-        <a href="mailto:wangcharles825@gmail.com">wangcharles825@gmail.com</a>
-      </div>
+      <dl class="direct">
+        <div><dt>Email</dt><dd><a href="mailto:wangcharles825@gmail.com">wangcharles825@gmail.com</a></dd></div>
+      </dl>
     </div>
-    <form class="contact-box reveal" id="proposal-form" novalidate>
+
+    <form class="form reveal" id="proposal-form" novalidate>
+      <h3>Request a Proposal</h3>
+      <div class="sub">Fields marked * are required.</div>
       <div class="form-row">
         <div class="field"><label for="f-name">Name <span class="req">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="f-email">Email <span class="req">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
@@ -403,26 +466,52 @@
           <select id="f-service" name="service">
             <option value="">Select…</option>
             <option>MEP Design Services</option>
-            <option>PE Review &amp; Sealing</option>
             <option>Data Center Thermal &amp; Liquid Cooling</option>
             <option>Hydronic &amp; Piping Analysis</option>
             <option>Industrial CFD &amp; Multiphysics</option>
+            <option>PE Review &amp; Sealing</option>
             <option>Other / Not sure</option>
           </select>
         </div>
       </div>
       <div class="field"><label for="f-msg">Project details <span class="req">*</span></label><textarea id="f-msg" name="message" placeholder="Facility type, location, scope, schedule…" required></textarea></div>
       <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn btn-accent" type="submit">Request a Proposal →</button>
+      <button class="btn btn-primary" type="submit">Submit Request <span class="arr">→</span></button>
       <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+      <div class="privacy">Your information is used only to respond to your inquiry.</div>
     </form>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr"></span> Wang Engineering, LLC. All rights reserved.</span>
-    <span>MEP Design · Thermal &amp; CFD · Hydronics · PE Review</span>
+    <div class="top">
+      <div>
+        <span class="brand-name">WANG ENGINEERING<small>LLC · CONSULTING ENGINEERS</small></span>
+        <p class="blurb">MEP design, data center cooling, hydronic analysis and CFD for mission-critical facilities.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">MEP Design</a></li>
+          <li><a href="#services">Data Center Cooling</a></li>
+          <li><a href="#services">Hydronic Analysis</a></li>
+          <li><a href="#services">Industrial CFD</a></li>
+          <li><a href="#services">PE Review &amp; Sealing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:wangcharles825@gmail.com">wangcharles825@gmail.com</a></li>
+          <li><a href="#contact">Request a Proposal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© <span id="yr"></span> Wang Engineering, LLC. All rights reserved.</span>
+      <span>Consulting Engineers</span>
+    </div>
   </div>
 </footer>
 
